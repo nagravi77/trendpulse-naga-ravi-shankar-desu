@@ -44,7 +44,7 @@ def main():
     print("Fetching and  categorizing stories ...")
 
     for category in CATEGORIES.keys():
-        print(f"\n Processiing Category: {category}")
+        print(f"\n Processing Category: {category}")
 
         for top_story in top_stories:
             if category_counts[category] >= MAX_PER_CATEGORY:
@@ -85,7 +85,7 @@ def main():
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(fetched_stories, f, indent=4)
 
-    print(f"\n collected {len(fetched_stories)} stories. saved to {filename}")
+    print(f"\n Collected {len(fetched_stories)} stories. saved to {filename}")
 
 if __name__ == "__main__":
     main()
