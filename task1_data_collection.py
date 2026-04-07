@@ -22,7 +22,12 @@ def fecth_story(id):
     except Exception as e:
         print(f"Error occured while fetching the story with {id} : {e}")
         return None
-    
+
+def getCurrentTime():
+    now = datetime.now()
+    formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")
+    return formatted_time
+
 def story_category(title):
     if not title:
         return None
@@ -42,7 +47,7 @@ def main():
     category_counts = {cat: 0 for cat in CATEGORIES.keys() }
 
     print("Fetching and  categorizing stories ...")
-
+    print(f"Started at - {getCurrentTime()}")
     for category in CATEGORIES.keys():
         print(f"\n Processing Category: {category}")
 
@@ -86,6 +91,7 @@ def main():
         json.dump(fetched_stories, f, indent=4)
 
     print(f"\n Collected {len(fetched_stories)} stories. saved to {filename}")
+    print(f"Finished at - {getCurrentTime()}")
 
 if __name__ == "__main__":
     main()
