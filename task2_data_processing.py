@@ -18,7 +18,7 @@ print()
 
 #2 - Clean the Data
 
-print(f"Rows before processing the cleaning procss : {len(df)}")
+print(f"Rows before processing the cleaning process : {len(df)}")
 # Remove duplicate post_ids
 df = df.drop_duplicates(subset="post_id")
 print(f"Rows after removing duplicates: {len(df)}")
